@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:medi_schema1/constants.dart';
-import 'package:medi_schema1/screens/quiz/quiz_screen.dart';
+import 'package:medi_schema1/screens/quiz/screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -60,6 +60,17 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+            padding: EdgeInsets.all(15),
+            alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+              child: Icon(Icons.chat_rounded),
+              onPressed: () {},
+              backgroundColor: Color.fromARGB(255, 137, 188, 213),
+            ),
+          ),
+
+          // Icon(icon)
         ],
       ),
     );
