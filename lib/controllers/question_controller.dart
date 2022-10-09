@@ -45,6 +45,8 @@ class QuestionController extends GetxController
   int _numOfCorrectAns = 0;
   int get numOfCorrectAns => this._numOfCorrectAns;
 
+  // get pageController => null;
+
   // called immediately after the widget is allocated memory
   @override
   void onInit() {
@@ -61,7 +63,7 @@ class QuestionController extends GetxController
     // start our animation
     // Once 60s is completed go to the next qn
     _animationController.forward().whenComplete(nextQuestion);
-    _pageController = PageController();
+    // _pageController = PageController();
     super.onInit();
   }
 
@@ -70,16 +72,16 @@ class QuestionController extends GetxController
   void onClose() {
     super.onClose();
     _animationController.dispose();
-    _pageController.dispose();
+    // _pageController.dispose();
   }
 
   void checkAns(Question question, int selectedIndex) {
     // because once user press any option then it will run
-    _isAnswered = true;
-    _correctAns = question.answer;
+    // _isAnswered = true;
+    // _correctAns = question.answer;
     _selectedAns = selectedIndex;
 
-    if (_correctAns == _selectedAns) _numOfCorrectAns++;
+    // if (_correctAns == _selectedAns) _numOfCorrectAns++;
 
     // It will stop the counter
     _animationController.stop();
@@ -94,8 +96,8 @@ class QuestionController extends GetxController
   void nextQuestion() {
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
-      _pageController.nextPage(
-          duration: Duration(milliseconds: 250), curve: Curves.ease);
+      // _pageController.nextPage(
+      //     duration: Duration(milliseconds: 250), curve: Curves.ease);
 
       // Reset the counter
       _animationController.reset();
